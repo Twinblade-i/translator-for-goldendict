@@ -497,6 +497,7 @@ def main(argv = None):
     if 'text' in res:
        if res['text']:
            print(res['text'])
+           print(' \n')
     if 'phonetic' in res:
         if res['phonetic'] and ('phonetic' in options):
             print('[' + res['phonetic'] + ']')
