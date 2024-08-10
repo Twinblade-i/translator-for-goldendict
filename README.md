@@ -1,4 +1,4 @@
-# Translator
+# Translator-for-GoldenDict
 
 命令行聚合翻译工具，主要作为GoldenDict翻译扩展，采用google和baidu翻译引擎，自动识别代理情况无缝切换
 
