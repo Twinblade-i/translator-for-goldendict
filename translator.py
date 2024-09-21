@@ -269,12 +269,13 @@ class GoogleTranslator (BasicTranslator):
         result = []
         if len(resp) < 13:
             return None
-        for x in resp[12]:
-            result.append('[{}]'.format(x[0]))
-            for y in x[1]:
-                result.append('- {}'.format(y[0]))
-                if len(y) >= 3:
-                    result.append('  * {}'.format(y[2]))
+        if resp[12]:
+            for x in resp[12]:
+                result.append('[{}]'.format(x[0]))
+                for y in x[1]:
+                    result.append('- {}'.format(y[0]))
+                    if len(y) >= 3:
+                        result.append('  * {}'.format(y[2]))
         return result
 
     def get_alternative (self, resp):
@@ -282,11 +283,12 @@ class GoogleTranslator (BasicTranslator):
         result = []
         if len(resp) < 6:
             return None
-        for x in resp[5]:
-            # result.append('- {}'.format(x[0]))
-            for i in x[2]:
-                if i[0] != definition:
-                    result.append(' * {}'.format(i[0]))
+        if resp[5]:
+            for x in resp[5]:
+                # result.append('- {}'.format(x[0]))
+                for i in x[2]:
+                    if i[0] != definition:
+                        result.append(' * {}'.format(i[0]))
         return result
 
 #----------------------------------------------------------------------
