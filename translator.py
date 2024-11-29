@@ -20,6 +20,7 @@ import codecs
 import pprint
 import socket
 import string
+import platform
 
 #----------------------------------------------------------------------
 # 语言的别名
@@ -72,6 +73,17 @@ langmap = {
     "vietnamese": "vi",
     "welsh": "cy"
 }
+
+#----------------------------------------------------------------------
+# 配置文件地址，兼容windows、linux
+#----------------------------------------------------------------------
+os_name = platform.system()
+if os_name == 'Windows':
+    initialization_file = 'D:\\GoldenDict\\translator-for-goldendict\\config.ini' # windows
+elif os_name == 'Linux':
+    initialization_file = '~/.config/translator/config.ini' # linux
+else:
+    initialization_file = './config.ini' # as default
 
 #----------------------------------------------------------------------
 # BasicTranslator
@@ -359,7 +371,7 @@ class BaiduTranslator (BasicTranslator):
 # 加载配置文件
 #----------------------------------------------------------------------
 def loadConfig ():
-    ininame = os.path.expanduser('~/.config/translator/config.ini')
+    ininame = os.path.expanduser(initialization_file)
     config = loadIni(ininame)
     if not config:
         return False, config
@@ -453,7 +465,7 @@ ENGINES = {
 def main(argv = None):
     load_config_success, ini_config = loadConfig()
     if not load_config_success:
-        print("set an initialization file at `~/.config/translator/config.ini` first!")
+        print(f"set an initialization file at {initialization_file} first!")
         return -1
     
     if argv is None:

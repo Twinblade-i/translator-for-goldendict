@@ -4,6 +4,10 @@
 
 此为在原项目 https://github.com/skywind3000/translator 基础上做出的改动，在此感谢
 
+## Update
+
+【2024.11.29】 增加在windows下的支持
+
 ## Preface
 
 命令行翻译工具，主要用于搭配 GoldenDict，特性如下：
@@ -28,7 +32,9 @@ sudo apt-get install python3-requests
 
 ## Configuration
 
-配置文件应位于 `~/.config/translator/config.ini`，内容类似：
+配置文件默认处于与`translator.py`同级目录下，即`./config.ini`，想要将配置文件放在指定位置可以在`translator.py`中手动更改`initialization_file`变量
+
+配置文件内容类似：
 
 ```ini
 # 本机处理相关设置：代理、请求超时界限、自动识别源语言字符阈值
@@ -104,7 +110,7 @@ This morning Mike recommended me to read an article about ColorSpace on Desiring
 
 要集成 GoldenDict，先在命令行下测试 Python 可以顺利运行该脚本，然后在GoldenDict中进行设置：
 ```bash
-python3 <dir>/translator.py %GDWORD%
+python <dir>/translator.py %GDWORD%
 ```
 
 ![goldendict setting](./images/goldendict.png)
