@@ -74,16 +74,17 @@ langmap = {
     "welsh": "cy"
 }
 
+if sys.stdout.encoding != 'utf-8': # 仅针对windows，注意输出utf-8需要windows上的goldendict客户端支持utf-8，可以使用GoldenDict-ng
+    sys.stdout.reconfigure(encoding='utf-8')
+
 #----------------------------------------------------------------------
 # 配置文件地址，兼容windows、linux
 #----------------------------------------------------------------------
 os_name = platform.system()
 if os_name == 'Windows':
-    initialization_file = 'D:\\GoldenDict\\translator-for-goldendict\\config.ini' # windows
+    initialization_file = 'D:\\GoldenDict-ng\\translator-for-goldendict\\config.ini' # windows
 elif os_name == 'Linux':
     initialization_file = '~/.config/translator-for-goldendict/config.ini' # linux
-else:
-    initialization_file = './config.ini' # as default
 
 #----------------------------------------------------------------------
 # BasicTranslator

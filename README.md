@@ -6,7 +6,7 @@
 
 ## Update
 
-【2024.11.29】 增加在windows下的支持
+【2024.11.29】 增加在windows下的支持，注意windows下官方GoldenDict不支持utf-8字符输出，可以使用非官方维护的GoldenDict，如[goldendict-ng](https://github.com/xiaoyifang/goldendict-ng)最新版本；linux下官方版本支持utf-8字符输出，不受影响
 
 ## Preface
 
