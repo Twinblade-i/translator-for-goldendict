@@ -81,7 +81,7 @@ os_name = platform.system()
 if os_name == 'Windows':
     initialization_file = 'D:\\GoldenDict\\translator-for-goldendict\\config.ini' # windows
 elif os_name == 'Linux':
-    initialization_file = '~/.config/translator/config.ini' # linux
+    initialization_file = '~/.config/translator-for-goldendict/config.ini' # linux
 else:
     initialization_file = './config.ini' # as default
 
