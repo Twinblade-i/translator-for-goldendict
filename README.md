@@ -32,9 +32,7 @@ sudo apt-get install python3-requests
 
 ## Configuration
 
-配置文件默认处于与`translator.py`同级目录下，即`./config.ini`，想要将配置文件放在指定位置可以在`translator.py`中手动更改`initialization_file`变量
-
-配置文件内容类似：
+配置文件`config.ini`内容格式如下，需要在`translator.py`中手动更改`initialization_file`变量以指明配置文件所在位置
 
 ```ini
 # 本机处理相关设置：代理、请求超时界限、自动识别源语言字符阈值
