@@ -112,3 +112,7 @@ python <dir>/translator.py %GDWORD%
 ```
 
 ![goldendict setting](./images/goldendict.png)
+
+## Note
+
+- 如果执行命令后没有翻译结果输出，很可能是翻译引擎返回了 `<Response [429]>`，这种情况多发生在使用代理时，尝试更换节点来解决
